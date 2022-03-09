@@ -24,13 +24,12 @@ A sample e-commerce site with which users shop for high-end home audio equipment
 
 ## Project Planning
 - [GitHub Projects Board](https://github.com/n0land0/audiophilia/projects/1)
+- Wireframes:
+<img width="869" alt="Screen Shot 2022-03-09 at 11 35 11 AM" src="https://user-images.githubusercontent.com/79823098/157508346-2e177de4-ac00-45b5-8d8c-d91d0f7eb46d.png">
 
 ## Architecture
 
 ## Snapshots of Application
-
-## Wireframes
-<img width="869" alt="Screen Shot 2022-03-09 at 11 35 11 AM" src="https://user-images.githubusercontent.com/79823098/157508346-2e177de4-ac00-45b5-8d8c-d91d0f7eb46d.png">
 
 ## Wins
 
