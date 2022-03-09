@@ -30,7 +30,7 @@ A sample e-commerce site with which users shop for high-end home audio equipment
 ## Snapshots of Application
 
 ## Wireframes
-<img width="276" alt="Screen Shot 2022-03-06 at 9 19 38 PM" src="https://user-images.githubusercontent.com/79823098/156967356-306380f9-6217-4a9d-92fa-04bb171c7d19.png"><img width="262" alt="Screen Shot 2022-03-06 at 9 20 13 PM" src="https://user-images.githubusercontent.com/79823098/156967521-9b6b9d61-c775-42c5-bbbd-0bf2e699dbc6.png"><img width="262" alt="Screen Shot 2022-03-06 at 9 20 33 PM" src="https://user-images.githubusercontent.com/79823098/156967530-2160e4a7-0015-4377-b23f-6f6cb3d3dcb6.png"><img width="262" alt="Screen Shot 2022-03-06 at 9 20 51 PM" src="https://user-images.githubusercontent.com/79823098/156967535-ac57152e-e2a5-4601-82d8-c33d8e1b48ea.png"><img width="262" alt="Screen Shot 2022-03-06 at 9 21 03 PM" src="https://user-images.githubusercontent.com/79823098/156967539-1332ec71-fbe9-4971-8bf5-b55ddd475eca.png"><img width="262" alt="Screen Shot 2022-03-06 at 9 21 15 PM" src="https://user-images.githubusercontent.com/79823098/156967546-271c9fff-58a9-4523-88cc-de3b7992a462.png">
+<img width="869" alt="Screen Shot 2022-03-09 at 11 35 11 AM" src="https://user-images.githubusercontent.com/79823098/157508346-2e177de4-ac00-45b5-8d8c-d91d0f7eb46d.png">
 
 ## Wins
 
