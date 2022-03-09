@@ -7,7 +7,7 @@ A sample e-commerce site with which users shop for high-end home audio equipment
 - **Framework**: React / NextJS
 - **Static Analysis**: TypeScript
 - **Data Fetching & State Management**: Apollo Client
-- **Styling**:
+- **Styling**: TailwindCSS
 - **Test-Driven Development**: Mock Service Worker, Jest, React Testing Library, Cypress
 - **Code Hygiene**: ESLint, Prettier, Husky
 - **Wireframing**: Figma
@@ -21,6 +21,9 @@ A sample e-commerce site with which users shop for high-end home audio equipment
   - Having used Mocha/Chai for unit testing and Cypress for E2E testing on previous projects, I wanted to expand on my mocking and testing strategies, especially when working on applications for which a backend is not already built.
 - Build a GraphQL API
   - Since I'd previously built REST APIs in Node and worked with GraphQL on the front end in other projects, I wanted to get a taste of working with GraphQL on the back end as well.
+
+## Project Planning
+- [GitHub Projects Board](https://github.com/n0land0/audiophilia/projects/1)
 
 ## Architecture
 
