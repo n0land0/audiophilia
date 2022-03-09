@@ -21,7 +21,9 @@
   ],
   "plugins": [
     "@typescript-eslint",
-    "simple-import-sort"
+    "simple-import-sort",
+    "jest-dom",
+    "testing-library"
   ],
   "rules": {
     "react/prop-types": "off",
