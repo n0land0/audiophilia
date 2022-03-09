@@ -10,7 +10,8 @@
     "format": "prettier --write \"src/**/*\"",
     "prepare": "husky install",
     "test": "yarn jest",
-    "test:watch": "yarn jest --watch"
+    "test:watch": "yarn jest --watch",
+    "test:coverage": "yarn jest --coverage"
   },
   "dependencies": {
     "next": "12.1.0",
