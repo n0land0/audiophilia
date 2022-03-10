@@ -15,6 +15,7 @@ A sample e-commerce site with which users shop for high-end home audio equipment
 - **Test-Driven Development**: Mock Service Worker, Jest, React Testing Library, Cypress
 - **Code Hygiene**: ESLint, Prettier, Husky
 - **Wireframing**: Figma
+- **CI/CD**: GitHub Actions, Vercel
 
 ## Goals
 
