@@ -16,7 +16,10 @@
     "cy:run": "npx cypress run",
     "test:cy-open": "start-server-and-test dev:e2e http://localhost:3000 cy:open",
     "test:cy-run": "start-server-and-test dev:ci http://localhost:3000 cy:run",
-    "dev:ci": "MOCK_SERVICE_WORKER=1 next dev"
+    "dev:ci": "MOCK_SERVICE_WORKER=1 next dev",
+    "prebuild": "CI=true yarn test",
+    "pretest": "yarn types:build",
+    "test:ci": "CI=true yarn test && yarn test:cy-run"
   },
   "dependencies": {
     "next": "12.1.0",
