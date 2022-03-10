@@ -9,7 +9,7 @@
     "lint": "next lint --fix",
     "format": "prettier --write \"src/**/*\"",
     "prepare": "husky install",
-    "test": "npx jest",
+    "test": "npx jest --passWithNoTests",
     "test:watch": "npx jest --watch",
     "test:coverage": "npx jest --coverage",
     "cy:open": "npx cypress open",
