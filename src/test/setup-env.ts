@@ -1,17 +1,24 @@
+import '@testing-library/jest-dom';
+
+import dotenv from 'dotenv';
+import { server } from 'mocks/server';
+
+dotenv.config({ path: '.env.local' });
+
 beforeEach(() => {
-  console.log('before each');
+  // console.log("before each");
 });
 
 beforeAll(() => {
-  console.log('before all');
+  server.listen();
 });
 
 afterEach(() => {
-  console.log('after each');
+  server.resetHandlers();
 });
 
 afterAll(() => {
-  console.log('after all');
+  server.close();
 });
 
 export {};
