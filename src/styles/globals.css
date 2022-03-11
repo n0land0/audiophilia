@@ -1,4 +1,4 @@
-html,
+/* html,
 body {
   padding: 0;
   margin: 0;
@@ -13,8 +13,78 @@ a {
 
 * {
   box-sizing: border-box;
-}
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* below are probably placeholders */
+/* consider making custom components w/ tailwind & input text prop, exporting all from components/index file */
+
+:root {
+  font-family: 'Manrope', sans-serif;
+}
+
+h1 {
+  font-weight: 700;
+  letter-spacing: 2px;
+  line-height: 58px;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  line-height: 44px;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-weight: 700;
+  letter-spacing: 1.15px;
+  line-height: 36px;
+  text-transform: uppercase;
+}
+
+h4 {
+  font-weight: 700;
+  letter-spacing: 2px;
+  line-height: 38px;
+  text-transform: uppercase;
+}
+
+h5 {
+  font-weight: 700;
+  letter-spacing: 1.7px;
+  line-height: 33px;
+  text-transform: uppercase;
+}
+
+h6 {
+  font-weight: 700;
+  letter-spacing: 1.3px;
+  line-height: 24px;
+  text-transform: uppercase;
+}
+
+.overline {
+  font-weight: 500;
+  letter-spacing: 10px;
+  line-height: 19px;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 25px;
+  text-transform: uppercase;
+}
+
+.body {
+  font-weight: 400;
+  line-height: 25px;
+}
