@@ -16,10 +16,10 @@ const createApolloClient = (): ApolloClient<Cache> => {
     ssrMode: typeof window === 'undefined',
     link: new HttpLink({
       uri: '', // database connection here
-      credentials: 'same-origin',
-      headers: {
-        Authorization: '', // this may be a different format depending on the API
-      },
+      // credentials: 'same-origin',
+      // headers: {
+      //   Authorization: '', // this may be a different format depending on the API
+      // },
     }),
     cache: new InMemoryCache({}),
   });
