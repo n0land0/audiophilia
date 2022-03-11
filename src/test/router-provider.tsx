@@ -24,6 +24,9 @@ const RouterProvider: React.FC<{ router?: Partial<NextRouter> }> = ({
       off: () => null,
       emit: () => null,
     },
+    isLocaleDomain = false,
+    isReady = true,
+    isPreview = false,
   } = router;
 
   return (
@@ -42,6 +45,9 @@ const RouterProvider: React.FC<{ router?: Partial<NextRouter> }> = ({
         beforePopState,
         isFallback,
         events,
+        isLocaleDomain,
+        isReady,
+        isPreview,
       }}
     >
       {children}
