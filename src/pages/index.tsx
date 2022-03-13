@@ -1,11 +1,6 @@
-import mockServiceWorker from 'mocks';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
-
-if (process.env.MOCK_SERVICE_WORKER === '1') {
-  mockServiceWorker();
-}
 
 const Home: NextPage = () => {
   return (
