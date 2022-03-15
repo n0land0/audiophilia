@@ -3,19 +3,25 @@ import { ElementType, FC } from 'react';
 interface TextProps {
   as: ElementType;
   style?: 'overline' | 'subtitle' | 'body';
-  color: string;
+  color?:
+    | 'black'
+    | 'offBlack'
+    | 'white'
+    | 'grayLight'
+    | 'grayMed'
+    | 'orangeLight'
+    | 'orangeBurnt';
   darkColor?: string;
 }
 
 const Text: FC<TextProps> = ({
   as: Tag,
   style = Tag,
-  color,
+  color = 'black',
   darkColor,
   children,
 }) => {
   const fontSize = `text-${style} `;
-  const fontTransform = `${style !== 'body' && 'uppercase'} `;
   const fontWeight =
     style === 'overline'
       ? 'font-normal '
@@ -23,11 +29,17 @@ const Text: FC<TextProps> = ({
       ? 'font-medium '
       : 'font-bold ';
   const fontColor = `text-${color} `;
-  const fontDarkColor = darkColor && `dark:text-${darkColor}`;
-  let computedStyles = fontSize + fontTransform + fontWeight + fontColor;
+  const fontDarkColor = darkColor && `dark:text-${darkColor} `;
+  const fontTransform = style !== 'body' && `uppercase `;
+  let computedStyles = fontSize + fontWeight + fontColor;
   if (darkColor) computedStyles += fontDarkColor;
+  if (fontTransform) computedStyles += fontTransform;
 
-  return <Tag className={computedStyles}>{children}</Tag>;
+  return (
+    <Tag className={computedStyles} data-testid='text-component'>
+      {children}
+    </Tag>
+  );
 };
 
 export default Text;
