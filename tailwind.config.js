@@ -6,32 +6,32 @@ module.exports = {
   ],
   safelist: [
     'text-h1Mobile',
-    'text-h1Tablet',
-    'text-h1Desktop',
+    'sm:text-h1Tablet',
+    'lg:text-h1Desktop',
     'text-h2Mobile',
-    'text-h2Tablet',
-    'text-h2Desktop',
+    'sm:text-h2Tablet',
+    'lg:text-h2Desktop',
     'text-h3Mobile',
-    'text-h3Tablet',
-    'text-h3Desktop',
+    'sm:text-h3Tablet',
+    'lg:text-h3Desktop',
     'text-h4Mobile',
-    'text-h4Tablet',
-    'text-h4Desktop',
+    'sm:text-h4Tablet',
+    'lg:text-h4Desktop',
     'text-h5Mobile',
-    'text-h5Tablet',
-    'text-h5Desktop',
+    'sm:text-h5Tablet',
+    'lg:text-h5Desktop',
     'text-h6Mobile',
-    'text-h6Tablet',
-    'text-h6Desktop',
+    'sm:text-h6Tablet',
+    'lg:text-h6Desktop',
     'text-overlineMobile',
-    'text-overlineTablet',
-    'text-overlineDesktop',
+    'sm:text-overlineTablet',
+    'lg:text-overlineDesktop',
     'text-subtitleMobile',
-    'text-subtitleTablet',
-    'text-subtitleDesktop',
+    'sm:text-subtitleTablet',
+    'lg:text-subtitleDesktop',
     'text-bodyMobile',
-    'text-bodyTablet',
-    'text-bodyDesktop',
+    'sm:text-bodyTablet',
+    'lg:text-bodyDesktop',
     'text-black',
     'text-offBlack',
     'text-white',
@@ -56,10 +56,10 @@ module.exports = {
       },
       fontSize: {
         h1Mobile: [
-          '56px',
+          '36px',
           {
-            letterSpacing: '2px',
-            lineHeight: '58px',
+            letterSpacing: '1.29px',
+            lineHeight: '40px',
           },
         ],
         h1Tablet: [
@@ -76,56 +76,166 @@ module.exports = {
             lineHeight: '58px',
           },
         ],
-        h2: [
+        h2Mobile: [
+          '28px',
+          {
+            letterSpacing: '1px',
+            lineHeight: '38.25px',
+          },
+        ],
+        h2Tablet: [
           '40px',
           {
             letterSpacing: '1.5px',
             lineHeight: '44px',
           },
         ],
-        h3: [
+        h2Desktop: [
+          '40px',
+          {
+            letterSpacing: '1.5px',
+            lineHeight: '44px',
+          },
+        ],
+        h3Mobile: [
+          '24px',
+          {
+            letterSpacing: '0.86px',
+            lineHeight: '36px',
+          },
+        ],
+        h3Tablet: [
           '32px',
           {
             letterSpacing: '1.15px',
             lineHeight: '36px',
           },
         ],
-        h4: [
+        h3Desktop: [
+          '32px',
+          {
+            letterSpacing: '1.15px',
+            lineHeight: '36px',
+          },
+        ],
+        h4Mobile: [
           '28px',
           {
             letterSpacing: '2px',
             lineHeight: '38px',
           },
         ],
-        h5: [
+        h4Tablet: [
+          '28px',
+          {
+            letterSpacing: '2px',
+            lineHeight: '38px',
+          },
+        ],
+        h4Desktop: [
+          '28px',
+          {
+            letterSpacing: '2px',
+            lineHeight: '38px',
+          },
+        ],
+        h5Mobile: [
           '24px',
           {
             letterSpacing: '1.7px',
             lineHeight: '33px',
           },
         ],
-        h6: [
+        h5Tablet: [
+          '24px',
+          {
+            letterSpacing: '1.7px',
+            lineHeight: '33px',
+          },
+        ],
+        h5Desktop: [
+          '24px',
+          {
+            letterSpacing: '1.7px',
+            lineHeight: '33px',
+          },
+        ],
+        h6Mobile: [
           '18px',
           {
             letterSpacing: '1.3px',
             lineHeight: '24px',
           },
         ],
-        overline: [
+        h6Tablet: [
+          '15px',
+          {
+            letterSpacing: '1.07px',
+            lineHeight: '20.49px',
+          },
+        ],
+        h6Desktop: [
+          '15px',
+          {
+            letterSpacing: '1.07px',
+            lineHeight: '20.49px',
+          },
+        ],
+        overlineMobile: [
           '14px',
           {
             letterSpacing: '10px',
             lineHeight: '19px',
           },
         ],
-        subtitle: [
+        overlineTablet: [
+          '14px',
+          {
+            letterSpacing: '10px',
+            lineHeight: '19px',
+          },
+        ],
+        overlineDesktop: [
+          '14px',
+          {
+            letterSpacing: '10px',
+            lineHeight: '19px',
+          },
+        ],
+        subtitleMobile: [
           '13px',
           {
             letterSpacing: '1px',
             lineHeight: '25px',
           },
         ],
-        body: [
+        subtitleTablet: [
+          '13px',
+          {
+            letterSpacing: '1px',
+            lineHeight: '25px',
+          },
+        ],
+        subtitleDesktop: [
+          '13px',
+          {
+            letterSpacing: '1px',
+            lineHeight: '25px',
+          },
+        ],
+        bodyMobile: [
+          '15px',
+          {
+            lineHeight: '25px',
+          },
+        ],
+        bodyTablet: [
+          '15px',
+          {
+            lineHeight: '25px',
+          },
+        ],
+        bodyDesktop: [
           '15px',
           {
             lineHeight: '25px',
