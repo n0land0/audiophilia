@@ -21,7 +21,7 @@ const Text: FC<TextProps> = ({
   darkColor,
   children,
 }) => {
-  const fontSize = `text-${style} `;
+  const fontSize = `text-${style}Mobile sm:text-${style}Tablet lg:text-${style}Desktop `;
   const fontWeight =
     style === 'overline'
       ? 'font-normal '
