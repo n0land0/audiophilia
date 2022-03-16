@@ -2,7 +2,7 @@ import { ElementType, FC } from 'react';
 
 interface TextProps {
   as: ElementType;
-  style?: 'overline' | 'subtitle' | 'body';
+  type?: 'overline' | 'subtitle' | 'body';
   color?:
     | 'black'
     | 'offBlack'
@@ -16,21 +16,21 @@ interface TextProps {
 
 const Text: FC<TextProps> = ({
   as: Tag,
-  style = Tag,
+  type = Tag,
   color = 'black',
   darkColor,
   children,
 }) => {
-  const fontSize = `text-${style}Mobile sm:text-${style}Tablet lg:text-${style}Desktop `;
+  const fontSize = `text-${type}Mobile sm:text-${type}Tablet lg:text-${type}Desktop `;
   const fontWeight =
-    style === 'overline'
+    type === 'overline'
       ? 'font-normal '
-      : style === 'body'
+      : type === 'body'
       ? 'font-medium '
       : 'font-bold ';
   const fontColor = `text-${color} `;
   const fontDarkColor = darkColor && `dark:text-${darkColor} `;
-  const fontTransform = style !== 'body' && `uppercase `;
+  const fontTransform = type !== 'body' && `uppercase `;
   let computedStyles = fontSize + fontWeight + fontColor;
   if (darkColor) computedStyles += fontDarkColor;
   if (fontTransform) computedStyles += fontTransform;
