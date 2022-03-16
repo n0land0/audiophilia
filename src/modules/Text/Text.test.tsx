@@ -25,7 +25,6 @@ test('displays correct text content', () => {
   expect(TextEl).toHaveTextContent('test');
 });
 
-// this also tests default styles generation
 test('header style generates correct tag and Tailwind classes', () => {
   const { getByTestId, container } = render(<Text as='h3'>test</Text>);
   const TextEl = getByTestId('text-component');
