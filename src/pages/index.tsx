@@ -2,6 +2,8 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 
+import Text from '../modules/Text';
+
 const Home: NextPage = () => {
   return (
     <div>
@@ -12,7 +14,9 @@ const Home: NextPage = () => {
       </Head>
 
       <main className='flex flex-col flex-1 items-center justify-center min-h-screen py-16'>
-        <h1 className='m-0 text-6xl leading-tight text-center'>
+        {/* <h1 className='m-0 text-6xl leading-tight text-center'> */}
+        <Text as='h1' color='orangeBurnt'>
+          {/* <h1 className='text-h1 text-orange-burnt'> */}
           Welcome to{' '}
           <a
             href='https://nextjs.org'
@@ -20,7 +24,9 @@ const Home: NextPage = () => {
           >
             Next.js!
           </a>
-        </h1>
+          {/* </h1> */}
+        </Text>
+        {/* </h1> */}
 
         <p className='my-16 text-2xl leading-6 text-center'>
           Get started by editing{' '}
