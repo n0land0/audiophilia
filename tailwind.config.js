@@ -39,6 +39,13 @@ module.exports = {
     'text-grayMed',
     'text-orangeLight',
     'text-orangeBurnt',
+    'hover:text-orangeBurnt',
+    'hover:text-white',
+    'bg-orangeBurnt',
+    'hover:bg-orangeLight',
+    'bg-black',
+    'hover:bg-grayDark',
+    'hover:bg-black',
   ],
   theme: {
     extend: {
@@ -48,6 +55,7 @@ module.exports = {
         white: '#FFFFFF',
         grayLight: '#FAFAFA',
         grayMed: '#F1F1F1',
+        grayDark: '#4C4C4C',
         orangeLight: '#FBAF85',
         orangeBurnt: '#D87D4A',
       },
