@@ -42,6 +42,8 @@ A sample e-commerce site with which users shop for high-end home audio equipment
 
 ## Challenges
 
+- Unit testing Tailwind style changes proved difficult, as these styles aren't reflect in the stylesheet used by JSDOM. I've been having to work around this with a combination of testing class names and moving actual DOM testing to Cypress
+
 ## Viewing & Installation
 
 ## Future Features
