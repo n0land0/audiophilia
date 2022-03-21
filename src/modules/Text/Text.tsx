@@ -5,6 +5,7 @@ interface TextProps {
   type?: 'overline' | 'subtitle' | 'body';
   color?:
     | 'black'
+    | 'black/50'
     | 'offBlack'
     | 'white'
     | 'grayLight'
