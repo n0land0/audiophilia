@@ -1,4 +1,6 @@
-import InputField from 'modules/InputField';
+import InputFieldNumber from 'modules/InputFieldNumber';
+import InputFieldRadio from 'modules/InputFieldRadio';
+import InputFieldText from 'modules/InputFieldText';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
@@ -8,7 +10,9 @@ import Button from '../modules/Button';
 import Text from '../modules/Text';
 
 const Home: NextPage = () => {
-  const [value, setValue] = useState<string | number>('');
+  const [radioValue, setRadioValue] = useState<string>('');
+  const [textValue, setTextValue] = useState<string>('');
+  const [numberValue, setNumberValue] = useState<number>(0);
 
   return (
     <div>
@@ -35,17 +39,20 @@ const Home: NextPage = () => {
         <Button type='alt1' width='form'>
           test
         </Button>
-        <InputField
-          fieldName='test1'
-          fieldType='radio'
-          fieldValue={value}
-          setFieldValue={setValue}
+        <InputFieldRadio
+          fieldNames={['test1', 'test2']}
+          fieldValue={radioValue}
+          setFieldValue={setRadioValue}
         />
-        <InputField
-          fieldName='test2'
-          fieldType='radio'
-          fieldValue={value}
-          setFieldValue={setValue}
+        <InputFieldText
+          fieldName='test3'
+          fieldValue={textValue}
+          setFieldValue={setTextValue}
+        />
+        <InputFieldNumber
+          fieldName='test4'
+          fieldValue={numberValue}
+          setFieldValue={setNumberValue}
         />
         <p className='my-16 text-2xl leading-6 text-center'>
           Get started by editing{' '}
