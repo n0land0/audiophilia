@@ -1,29 +1,28 @@
 import { ChangeEvent, Dispatch, FC, SetStateAction } from 'react';
 
-interface InputFieldTextProps {
-  fieldValue: string;
-  setFieldValue: Dispatch<SetStateAction<string>>;
+interface InputFieldNumberProps {
+  fieldValue: number;
+  setFieldValue: Dispatch<SetStateAction<number>>;
   fieldName: string;
 }
 
-const InputFieldText: FC<InputFieldTextProps> = ({
+const InputFieldNumber: FC<InputFieldNumberProps> = ({
   fieldValue,
   setFieldValue,
   fieldName,
 }) => {
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setFieldValue(event.target.value);
+    setFieldValue(+event.target.value);
   };
 
   return (
     <input
-      type='text'
+      type='number'
       onChange={handleChange}
       name={fieldName}
       value={fieldValue}
-      placeholder={`Insert your ${fieldName}`}
     />
   );
 };
 
-export default InputFieldText;
+export default InputFieldNumber;
