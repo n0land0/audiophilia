@@ -1,6 +1,6 @@
 import { ChangeEvent, Dispatch, FC, SetStateAction } from 'react';
 
-interface InputFieldTextProps {
+interface InputFieldProps {
   fieldName: string;
   fieldType: 'text' | 'radio' | 'number';
   fieldValue: string | number;
@@ -8,7 +8,7 @@ interface InputFieldTextProps {
 }
 
 // needs to be a parent form with handle/submit fxns
-const InputFieldText: FC<InputFieldTextProps> = ({
+const InputField: FC<InputFieldProps> = ({
   fieldName,
   fieldType,
   fieldValue,
@@ -21,21 +21,32 @@ const InputFieldText: FC<InputFieldTextProps> = ({
   };
 
   return (
-    <label htmlFor={fieldName}>
-      {fieldName}
-      <input
-        type={fieldType}
-        onChange={handleChange}
-        name={fieldName}
-        id={fieldName}
-        value={fieldValue}
-        placeholder={
-          fieldType === 'number' ? undefined : `Insert your ${fieldName}`
-        }
-        checked={fieldValue === fieldName}
-      />
-    </label>
+    <>
+      {fieldType === 'radio' ? (
+        <label htmlFor={fieldName}>
+          <input
+            type={fieldType}
+            onChange={handleChange}
+            name={fieldName}
+            id={fieldName}
+            value={fieldValue}
+            checked={fieldValue === fieldName}
+          />
+          {fieldName}
+        </label>
+      ) : (
+        <input
+          type={fieldType}
+          onChange={handleChange}
+          name={fieldName}
+          value={fieldValue}
+          placeholder={
+            fieldType === 'number' ? undefined : `Insert your ${fieldName}`
+          }
+        />
+      )}
+    </>
   );
 };
 
-export default InputFieldText;
+export default InputField;
