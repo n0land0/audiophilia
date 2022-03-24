@@ -1,11 +1,15 @@
+import InputField from 'modules/InputField';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
+import { ChangeEvent, FormEvent, useState } from 'react';
 
 import Button from '../modules/Button';
 import Text from '../modules/Text';
 
 const Home: NextPage = () => {
+  const [value, setValue] = useState<string>('');
+
   return (
     <div>
       <Head>
@@ -31,6 +35,12 @@ const Home: NextPage = () => {
         <Button type='alt1' width='form'>
           test
         </Button>
+        <InputField
+          fieldName='test'
+          fieldType='text'
+          fieldValue={value}
+          handleChange={(event) => setValue(event.target.value)}
+        />
         <p className='my-16 text-2xl leading-6 text-center'>
           Get started by editing{' '}
           <code className='bg-slate-50 p-3 text-lg font-mono rounded-md'>
