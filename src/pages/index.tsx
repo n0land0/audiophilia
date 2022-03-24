@@ -4,7 +4,7 @@ import InputFieldText from 'modules/InputFieldText';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
-import { ChangeEvent, FormEvent, useState } from 'react';
+import { useState } from 'react';
 
 import Button from '../modules/Button';
 import Text from '../modules/Text';
