@@ -8,7 +8,7 @@ import Button from '../modules/Button';
 import Text from '../modules/Text';
 
 const Home: NextPage = () => {
-  const [value, setValue] = useState<string>('');
+  const [value, setValue] = useState<string | number>('');
 
   return (
     <div>
@@ -36,10 +36,16 @@ const Home: NextPage = () => {
           test
         </Button>
         <InputField
-          fieldName='test'
-          fieldType='text'
+          fieldName='test1'
+          fieldType='radio'
           fieldValue={value}
-          handleChange={(event) => setValue(event.target.value)}
+          setFieldValue={setValue}
+        />
+        <InputField
+          fieldName='test2'
+          fieldType='radio'
+          fieldValue={value}
+          setFieldValue={setValue}
         />
         <p className='my-16 text-2xl leading-6 text-center'>
           Get started by editing{' '}
