@@ -14,14 +14,17 @@ const InputFieldNumber: FC<InputFieldNumberProps> = ({
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     if (+event.target.value >= 0) setFieldValue(+event.target.value);
   };
+  const decrement = () => {
+    if (fieldValue > 0) setFieldValue(fieldValue - 1);
+  };
+  const increment = () => setFieldValue(fieldValue + 1);
 
   return (
-    <input
-      type='number'
-      onChange={handleChange}
-      name={fieldName}
-      value={fieldValue}
-    />
+    <>
+      <button onClick={decrement}>-</button>
+      <input type='number' name={fieldName} value={fieldValue} disabled />
+      <button onClick={increment}>+</button>
+    </>
   );
 };
 
