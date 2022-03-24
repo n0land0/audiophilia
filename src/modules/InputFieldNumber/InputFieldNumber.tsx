@@ -12,7 +12,7 @@ const InputFieldNumber: FC<InputFieldNumberProps> = ({
   fieldName,
 }) => {
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setFieldValue(+event.target.value);
+    if (+event.target.value >= 0) setFieldValue(+event.target.value);
   };
 
   return (

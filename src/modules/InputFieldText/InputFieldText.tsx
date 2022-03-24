@@ -22,6 +22,7 @@ const InputFieldText: FC<InputFieldTextProps> = ({
       name={fieldName}
       value={fieldValue}
       placeholder={`Insert your ${fieldName}`}
+      required
     />
   );
 };
