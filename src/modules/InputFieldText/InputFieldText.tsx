@@ -16,14 +16,17 @@ const InputFieldText: FC<InputFieldTextProps> = ({
   };
 
   return (
-    <input
-      type='text'
-      onChange={handleChange}
-      name={fieldName}
-      value={fieldValue}
-      placeholder={`Insert your ${fieldName}`}
-      required
-    />
+    <>
+      <h6>{fieldName}</h6>
+      <input
+        type='text'
+        onChange={handleChange}
+        name={fieldName}
+        value={fieldValue}
+        placeholder={`Insert your ${fieldName}`}
+        required
+      />
+    </>
   );
 };
 
