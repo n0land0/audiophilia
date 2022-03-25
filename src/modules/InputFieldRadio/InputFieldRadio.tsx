@@ -1,35 +1,42 @@
 import { ChangeEvent, Dispatch, FC, SetStateAction } from 'react';
 
 interface InputFieldRadioProps {
+  fieldName: string;
   fieldValue: string;
   setFieldValue: Dispatch<SetStateAction<string>>;
-  fieldNames: string[];
+  options: string[];
 }
 
 const InputFieldRadio: FC<InputFieldRadioProps> = ({
+  fieldName,
   fieldValue,
   setFieldValue,
-  fieldNames,
+  options,
 }) => {
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setFieldValue(event.target.id);
+    setFieldValue(event.target.value);
   };
 
-  const radioElements = fieldNames.map((fieldName: string, index: number) => (
-    <label key={index} htmlFor={fieldName}>
+  const radioElements = options.map((option: string, index: number) => (
+    <label key={index} htmlFor={option}>
       <input
         type='radio'
-        onChange={handleChange}
+        onChange={(event) => handleChange(event)}
         name={fieldName}
-        id={fieldName}
-        value={fieldValue}
-        checked={fieldValue === fieldName}
+        id={option}
+        value={option}
+        checked={fieldValue === option}
       />
-      {fieldName}
+      {option}
     </label>
   ));
 
-  return <>{radioElements}</>;
+  return (
+    <>
+      <h6>{fieldName}</h6>
+      {radioElements}
+    </>
+  );
 };
 
 export default InputFieldRadio;
