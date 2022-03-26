@@ -17,7 +17,12 @@ const InputFieldText: FC<InputFieldTextProps> = ({
     setFieldValue(event.target.value);
   };
 
-  const validChars = /^[a-zA-Z0-9- ]*$/;
+  const validChars =
+    fieldType === 'email'
+      ? /^[a-z0-9]+@[a-z]+\.[a-z]{2,3}$/
+      : fieldType === 'tel'
+      ? /^[0-9-]*$/
+      : /^[a-zA-Z0-9- ]*$/;
 
   const formatWarning = validChars.test(fieldValue) ? null : (
     <p>Wrong format</p>
@@ -32,6 +37,7 @@ const InputFieldText: FC<InputFieldTextProps> = ({
         onChange={handleChange}
         name={fieldName}
         value={fieldValue}
+        pattern={`${validChars}`}
         placeholder={`Insert your ${fieldName}`}
         required
       />
