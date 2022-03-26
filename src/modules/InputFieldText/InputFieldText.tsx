@@ -1,4 +1,4 @@
-import { ChangeEvent, Dispatch, FC, SetStateAction } from 'react';
+import { ChangeEvent, Dispatch, FC, SetStateAction, useState } from 'react';
 
 interface InputFieldTextProps {
   fieldValue: string;
@@ -13,8 +13,15 @@ const InputFieldText: FC<InputFieldTextProps> = ({
   fieldName,
   fieldType = 'text',
 }) => {
+  const [formatError, setFormatError] = useState(false);
+
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setFieldValue(event.target.value);
+    if (validChars.test(event.target.value)) setFormatError(false);
+  };
+
+  const handleBlur = () => {
+    validChars.test(fieldValue) ? setFormatError(false) : setFormatError(true);
   };
 
   const validChars =
@@ -24,17 +31,14 @@ const InputFieldText: FC<InputFieldTextProps> = ({
       ? /^[0-9-]*$/
       : /^[a-zA-Z0-9- ]*$/;
 
-  const formatWarning = validChars.test(fieldValue) ? null : (
-    <p>Wrong format</p>
-  );
-
   return (
     <>
       <h6>{fieldName}</h6>
-      {formatWarning && formatWarning}
+      {formatError && <p>Wrong format</p>}
       <input
         type={fieldType}
         onChange={handleChange}
+        onBlur={handleBlur}
         name={fieldName}
         value={fieldValue}
         pattern={`${validChars}`}
