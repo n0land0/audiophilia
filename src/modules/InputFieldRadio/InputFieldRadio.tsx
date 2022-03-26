@@ -27,25 +27,27 @@ const InputFieldRadio: FC<InputFieldRadioProps> = ({
     }`;
 
     return (
-      <label key={index} htmlFor={option} className={labelStyle}>
-        <input
-          className={inputStyle}
-          type='radio'
-          onChange={(event) => handleChange(event)}
-          name={fieldName}
-          id={option}
-          value={option}
-          checked={fieldValue === option}
-        />
-        {option}
-      </label>
+      <div key={index} className='mb-4'>
+        <label htmlFor={option} className={labelStyle}>
+          <input
+            className={inputStyle}
+            type='radio'
+            onChange={(event) => handleChange(event)}
+            name={fieldName}
+            id={option}
+            value={option}
+            checked={fieldValue === option}
+          />
+          {option}
+        </label>
+      </div>
     );
   });
 
   return (
-    <article className='w-full flex justify-center pb-4'>
-      <h6 className='width-1/2'>{fieldName}</h6>
-      <div className='width-1/2 flex flex-col'>{radioElements}</div>
+    <article className='w-full flex justify-center'>
+      <h6 className='w-1/2 text-inputFieldHeader font-bold'>{fieldName}</h6>
+      <div className='w-1/2 flex flex-col'>{radioElements}</div>
     </article>
   );
 };

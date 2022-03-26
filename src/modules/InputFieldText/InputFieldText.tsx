@@ -15,6 +15,13 @@ const InputFieldText: FC<InputFieldTextProps> = ({
 }) => {
   const [formatError, setFormatError] = useState(false);
 
+  const validChars =
+    fieldType === 'email'
+      ? /^[a-z0-9]+@[a-z]+\.[a-z]{2,3}$/
+      : fieldType === 'tel'
+      ? /^[0-9-]*$/
+      : /^[a-zA-Z0-9- ]*$/;
+
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setFieldValue(event.target.value);
     if (validChars.test(event.target.value)) setFormatError(false);
@@ -24,18 +31,25 @@ const InputFieldText: FC<InputFieldTextProps> = ({
     validChars.test(fieldValue) ? setFormatError(false) : setFormatError(true);
   };
 
-  const validChars =
-    fieldType === 'email'
-      ? /^[a-z0-9]+@[a-z]+\.[a-z]{2,3}$/
-      : fieldType === 'tel'
-      ? /^[0-9-]*$/
-      : /^[a-zA-Z0-9- ]*$/;
+  const headerStyle = `text-inputFieldHeader font-bold ${
+    formatError && 'text-red'
+  }`;
+  const inputStyle = `w-full h-[56px] rounded-lg pl-6 text-inputField font-bold ${
+    formatError ? 'border-2 border-red' : 'border focus:border-orangeBurnt'
+  }`;
 
   return (
-    <>
-      <h6>{fieldName}</h6>
-      {formatError && <p>Wrong format</p>}
+    <article className='w-[309px] mb-4'>
+      <div className='w-full flex justify-between pb-[9px]'>
+        <h6 className={headerStyle}>{fieldName}</h6>
+        {formatError && (
+          <p className='text-inputFieldHeader font-medium text-red'>
+            Wrong format
+          </p>
+        )}
+      </div>
       <input
+        className={inputStyle}
         type={fieldType}
         onChange={handleChange}
         onBlur={handleBlur}
@@ -45,7 +59,7 @@ const InputFieldText: FC<InputFieldTextProps> = ({
         placeholder={`Insert your ${fieldName}`}
         required
       />
-    </>
+    </article>
   );
 };
 
