@@ -6,14 +6,28 @@ import { render } from '../../test';
 import InputFieldText from '.';
 
 const ParentForm = () => {
-  const [fieldValue, setFieldValue] = useState('');
+  const [textValue, setTextValue] = useState('');
+  const [telValue, setTelValue] = useState('');
+  const [emailValue, setEmailValue] = useState('');
 
   return (
     <form onSubmit={jest.fn().mockImplementation((e) => e.preventDefault())}>
       <InputFieldText
-        fieldName='test'
-        fieldValue={fieldValue}
-        setFieldValue={setFieldValue}
+        fieldName='text input'
+        fieldValue={textValue}
+        setFieldValue={setTextValue}
+      />
+      <InputFieldText
+        fieldName='phone input'
+        fieldValue={telValue}
+        setFieldValue={setTelValue}
+        fieldType={'tel'}
+      />
+      <InputFieldText
+        fieldName='email input'
+        fieldValue={emailValue}
+        setFieldValue={setEmailValue}
+        fieldType={'email'}
       />
     </form>
   );
@@ -29,39 +43,82 @@ describe('InputFieldText', () => {
   });
 
   test('it renders a field name and input element by default', () => {
-    const HeadingEl = screen.getByRole('heading', { name: 'test' });
-    const InputEl = screen.getByRole('textbox');
+    const [HeadingElText, HeadingElTel, HeadingElEmail] =
+      screen.getAllByRole('heading');
+    const [InputElText, InputElTel, InputElEmail] =
+      screen.getAllByRole('textbox');
 
-    expect(HeadingEl).toBeInTheDocument();
-    expect(InputEl).toBeInTheDocument();
+    expect(HeadingElText).toBeInTheDocument();
+    expect(HeadingElTel).toBeInTheDocument();
+    expect(HeadingElEmail).toBeInTheDocument();
+
+    expect(InputElText).toBeInTheDocument();
+    expect(InputElTel).toBeInTheDocument();
+    expect(InputElEmail).toBeInTheDocument();
   });
 
   test('it displays typed user input', () => {
-    const InputEl = screen.getByRole('textbox');
+    const InputElText = screen.getByPlaceholderText('Insert your text input');
+    const InputElTel = screen.getByPlaceholderText('Insert your phone input');
+    const InputElEmail = screen.getByPlaceholderText('Insert your email input');
 
-    expect(InputEl.value).toBe('');
+    expect(InputElText.value).toBe('');
+    expect(InputElTel.value).toBe('');
+    expect(InputElEmail.value).toBe('');
 
-    userEvent.type(InputEl, 'here is some text');
-    expect(InputEl.value).toBe('here is some text');
+    userEvent.type(InputElText, 'here is some text');
+    expect(InputElText.value).toBe('here is some text');
+
+    userEvent.type(InputElTel, '1234567890');
+    expect(InputElTel.value).toBe('1234567890');
+
+    userEvent.type(InputElEmail, 'tightemail@example.com');
+    expect(InputElEmail.value).toBe('tightemail@example.com');
   });
 
-  test('it displays an error message upon invalid input', () => {
-    const InputEl = screen.getByRole('textbox');
+  test('it displays an error message upon invalid text input', () => {
+    const InputElText = screen.getByPlaceholderText('Insert your text input');
 
-    expect(InputEl.value).toBe('');
+    expect(InputElText.value).toBe('');
 
-    userEvent.type(InputEl, '$');
+    userEvent.type(InputElText, '$');
+    userEvent.tab();
+
+    const ErrorEl = screen.getByText('Wrong format');
+    expect(ErrorEl).toBeInTheDocument();
+  });
+
+  test('it displays an error message upon invalid phone input', () => {
+    const InputElTel = screen.getByPlaceholderText('Insert your phone input');
+
+    expect(InputElTel.value).toBe('');
+
+    userEvent.type(InputElTel, 'a');
+    userEvent.tab();
+
+    const ErrorEl = screen.getByText('Wrong format');
+    expect(ErrorEl).toBeInTheDocument();
+  });
+
+  test('it displays an error message upon invalid text input', () => {
+    const InputElEmail = screen.getByPlaceholderText('Insert your email input');
+
+    expect(InputElEmail.value).toBe('');
+
+    userEvent.type(InputElEmail, 'hey@email.toomanycharacters');
+    userEvent.tab();
 
     const ErrorEl = screen.getByText('Wrong format');
     expect(ErrorEl).toBeInTheDocument();
   });
 
   test('it no longer displays an error message when input is corrected', () => {
-    const InputEl = screen.getByRole('textbox');
+    const InputEl = screen.getAllByRole('textbox')[0];
 
     expect(InputEl.value).toBe('');
 
     userEvent.type(InputEl, '$');
+    userEvent.tab();
 
     const ErrorEl = screen.getByText('Wrong format');
     expect(ErrorEl).toBeInTheDocument();
