@@ -17,25 +17,36 @@ const InputFieldRadio: FC<InputFieldRadioProps> = ({
     setFieldValue(event.target.value);
   };
 
-  const radioElements = options.map((option: string, index: number) => (
-    <label key={index} htmlFor={option}>
-      <input
-        type='radio'
-        onChange={(event) => handleChange(event)}
-        name={fieldName}
-        id={option}
-        value={option}
-        checked={fieldValue === option}
-      />
-      {option}
-    </label>
-  ));
+  const radioElements = options.map((option: string, index: number) => {
+    const labelStyle = `w-[309px] h-[56px] flex items-center rounded-lg pl-6 text-inputField font-bold ${
+      fieldValue === option ? 'border border-orangeBurnt' : 'border'
+    } checked:bg-orangeBurnt`;
+
+    const inputStyle = `inline-block w-[20px] h-[20px] mr-4 p-[4px] rounded-full border bg-clip-content ${
+      fieldValue === option && 'bg-orangeBurnt'
+    }`;
+
+    return (
+      <label key={index} htmlFor={option} className={labelStyle}>
+        <input
+          className={inputStyle}
+          type='radio'
+          onChange={(event) => handleChange(event)}
+          name={fieldName}
+          id={option}
+          value={option}
+          checked={fieldValue === option}
+        />
+        {option}
+      </label>
+    );
+  });
 
   return (
-    <>
-      <h6>{fieldName}</h6>
-      {radioElements}
-    </>
+    <article className='w-full flex justify-center pb-4'>
+      <h6 className='width-1/2'>{fieldName}</h6>
+      <div className='width-1/2 flex flex-col'>{radioElements}</div>
+    </article>
   );
 };
 
