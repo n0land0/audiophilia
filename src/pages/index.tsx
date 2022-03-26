@@ -10,8 +10,10 @@ import Button from '../modules/Button';
 import Text from '../modules/Text';
 
 const Home: NextPage = () => {
-  const [radioValue, setRadioValue] = useState<string>('');
+  const [radioValue, setRadioValue] = useState<string>('test1');
   const [textValue, setTextValue] = useState<string>('');
+  const [telValue, setTelValue] = useState<string>('');
+  const [emailValue, setEmailValue] = useState<string>('');
   const [numberValue, setNumberValue] = useState<number>(0);
 
   return (
@@ -40,17 +42,30 @@ const Home: NextPage = () => {
           test
         </Button>
         <InputFieldRadio
-          fieldNames={['test1', 'test2']}
+          fieldName='test'
           fieldValue={radioValue}
           setFieldValue={setRadioValue}
+          options={['test1', 'test2']}
         />
         <InputFieldText
           fieldName='test3'
           fieldValue={textValue}
           setFieldValue={setTextValue}
         />
-        <InputFieldNumber
+        <InputFieldText
           fieldName='test4'
+          fieldValue={emailValue}
+          setFieldValue={setEmailValue}
+          fieldType='email'
+        />
+        <InputFieldText
+          fieldName='test5'
+          fieldValue={telValue}
+          setFieldValue={setTelValue}
+          fieldType='tel'
+        />
+        <InputFieldNumber
+          fieldName='test6'
           fieldValue={numberValue}
           setFieldValue={setNumberValue}
         />
