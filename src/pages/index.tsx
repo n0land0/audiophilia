@@ -1,11 +1,21 @@
+import InputFieldNumber from 'modules/InputFieldNumber';
+import InputFieldRadio from 'modules/InputFieldRadio';
+import InputFieldText from 'modules/InputFieldText';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
+import { useState } from 'react';
 
 import Button from '../modules/Button';
 import Text from '../modules/Text';
 
 const Home: NextPage = () => {
+  const [radioValue, setRadioValue] = useState<string>('test1');
+  const [textValue, setTextValue] = useState<string>('');
+  const [telValue, setTelValue] = useState<string>('');
+  const [emailValue, setEmailValue] = useState<string>('');
+  const [numberValue, setNumberValue] = useState<number>(0);
+
   return (
     <div>
       <Head>
@@ -31,6 +41,42 @@ const Home: NextPage = () => {
         <Button type='alt1' width='form'>
           test
         </Button>
+        <InputFieldRadio
+          fieldName='test'
+          fieldValue={radioValue}
+          setFieldValue={setRadioValue}
+          options={['test1', 'test2']}
+        />
+        <InputFieldText
+          fieldName='test3'
+          fieldValue={textValue}
+          setFieldValue={setTextValue}
+          width='full'
+        />
+        <InputFieldText
+          fieldName='test4'
+          fieldValue={emailValue}
+          setFieldValue={setEmailValue}
+          fieldType='email'
+        />
+        <InputFieldText
+          fieldName='test5'
+          fieldValue={telValue}
+          setFieldValue={setTelValue}
+          fieldType='tel'
+        />
+        <InputFieldNumber
+          fieldName='test6'
+          fieldValue={numberValue}
+          setFieldValue={setNumberValue}
+          size='detail'
+        />
+        <InputFieldNumber
+          fieldName='test7'
+          fieldValue={numberValue}
+          setFieldValue={setNumberValue}
+          size='cart'
+        />
         <p className='my-16 text-2xl leading-6 text-center'>
           Get started by editing{' '}
           <code className='bg-slate-50 p-3 text-lg font-mono rounded-md'>

@@ -5,6 +5,7 @@ module.exports = {
     './src/features/**/*.{js,ts,jsx,tsx}',
   ],
   safelist: [
+    'text-inputField',
     'text-h1Mobile',
     'sm:text-h1Tablet',
     'lg:text-h1Desktop',
@@ -46,6 +47,9 @@ module.exports = {
     'bg-black',
     'hover:bg-grayDark',
     'hover:bg-black',
+    'focus:border-orangeBurnt',
+    'text-inputField',
+    'text-inputFieldHeader',
   ],
   theme: {
     extend: {
@@ -58,6 +62,7 @@ module.exports = {
         grayDark: '#4C4C4C',
         orangeLight: '#FBAF85',
         orangeBurnt: '#D87D4A',
+        red: '#CD2C2C',
       },
       fontFamily: {
         main: ['Manrope', 'sans-serif'],
@@ -249,6 +254,8 @@ module.exports = {
             lineHeight: '25px',
           },
         ],
+        inputField: '14px',
+        inputFieldHeader: '12px',
       },
     },
   },
