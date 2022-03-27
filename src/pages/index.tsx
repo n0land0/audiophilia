@@ -51,6 +51,7 @@ const Home: NextPage = () => {
           fieldName='test3'
           fieldValue={textValue}
           setFieldValue={setTextValue}
+          width='full'
         />
         <InputFieldText
           fieldName='test4'
