@@ -4,7 +4,7 @@ interface InputFieldNumberProps {
   fieldValue: number;
   setFieldValue: Dispatch<SetStateAction<number>>;
   fieldName: string;
-  size: 'product detail' | 'cart';
+  size: 'detail' | 'cart';
 }
 
 const InputFieldNumber: FC<InputFieldNumberProps> = ({

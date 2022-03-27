@@ -68,7 +68,7 @@ const Home: NextPage = () => {
           fieldName='test6'
           fieldValue={numberValue}
           setFieldValue={setNumberValue}
-          size='product detail'
+          size='detail'
         />
         <InputFieldNumber
           fieldName='test7'

@@ -14,6 +14,7 @@ const ParentForm = ({ children }: any) => {
         fieldValue={fieldValue}
         setFieldValue={setFieldValue}
         fieldName={'test'}
+        size='detail'
       />
     </form>
   );
