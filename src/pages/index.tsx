@@ -68,6 +68,13 @@ const Home: NextPage = () => {
           fieldName='test6'
           fieldValue={numberValue}
           setFieldValue={setNumberValue}
+          size='product detail'
+        />
+        <InputFieldNumber
+          fieldName='test7'
+          fieldValue={numberValue}
+          setFieldValue={setNumberValue}
+          size='cart'
         />
         <p className='my-16 text-2xl leading-6 text-center'>
           Get started by editing{' '}
