@@ -20,7 +20,7 @@ const InputFieldRadio: FC<InputFieldRadioProps> = ({
   const radioElements = options.map((option: string, index: number) => {
     const labelStyle = `w-[309px] h-[56px] flex items-center rounded-lg pl-6 text-inputField font-bold ${
       fieldValue === option ? 'border border-orangeBurnt' : 'border'
-    } checked:bg-orangeBurnt`;
+    } hover:border-orangeBurnt checked:bg-orangeBurnt`;
 
     const inputStyle = `inline-block w-[20px] h-[20px] mr-4 p-[4px] rounded-full border bg-clip-content ${
       fieldValue === option && 'bg-orangeBurnt'
