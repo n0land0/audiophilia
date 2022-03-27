@@ -15,7 +15,8 @@ const InputFieldNumber: FC<InputFieldNumberProps> = ({
 }) => {
   // const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
   //   if (+event.target.value >= 0) setFieldValue(+event.target.value);
-  // };
+  // }; -- is this implementation accessible?
+
   const decrement = () => {
     if (fieldValue > 0) setFieldValue(fieldValue - 1);
   };
