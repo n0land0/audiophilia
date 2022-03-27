@@ -25,7 +25,7 @@ describe('InputFieldNumber', () => {
     const InputEl = screen.getByRole('spinbutton');
     const ButtonEl = screen.getAllByRole('button');
 
-    expect(InputEl).toContainHTML('input type="number"');
+    expect(InputEl).toHaveAttribute('type', 'number');
     expect(ButtonEl).toHaveLength(2);
   });
 
