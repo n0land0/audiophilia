@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { render } from '../../test';
 import InputFieldNumber from '.';
 
-const ParentForm = ({ children }: any) => {
+const ParentForm = () => {
   const [fieldValue, setFieldValue] = useState(0);
 
   return (
