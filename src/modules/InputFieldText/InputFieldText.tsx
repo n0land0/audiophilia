@@ -5,6 +5,7 @@ interface InputFieldTextProps {
   setFieldValue: Dispatch<SetStateAction<string>>;
   fieldName: string;
   fieldType?: 'text' | 'tel' | 'email';
+  width?: 'half' | 'full';
 }
 
 const InputFieldText: FC<InputFieldTextProps> = ({
@@ -12,6 +13,7 @@ const InputFieldText: FC<InputFieldTextProps> = ({
   setFieldValue,
   fieldName,
   fieldType = 'text',
+  width = 'half',
 }) => {
   const [formatError, setFormatError] = useState(false);
 
@@ -39,7 +41,7 @@ const InputFieldText: FC<InputFieldTextProps> = ({
   }`;
 
   return (
-    <article className='w-[309px] mb-4'>
+    <article className={`${width === 'full' ? 'w-full' : 'w-[309px]'} mb-4`}>
       <div className='w-full flex justify-between pb-[9px]'>
         <h6 className={headerStyle}>{fieldName}</h6>
         {formatError && (
