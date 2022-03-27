@@ -23,12 +23,12 @@ const InputFieldNumber: FC<InputFieldNumberProps> = ({
 
   const moduleStyles = `${
     size === 'cart' ? 'w-[96px] h-[32px]' : 'w-[120px] h-[48px]'
-  } flex items-center p-[15px] bg-grayMed`;
-  const inputStyles = 'flex w-full bg-transparent text-center';
-  const decButtonStyles = `text-black/25 ${
+  } flex items-center p-[15px] bg-grayMed text-[13px]`;
+  const inputStyles = 'flex w-full bg-transparent text-center font-bold';
+  const decButtonStyles = `text-black/25 font-bold ${
     fieldValue > 0 ? 'hover:text-orangeBurnt' : 'cursor-not-allowed'
   }`;
-  const incButtonStyles = 'text-black/25 hover:text-orangeBurnt';
+  const incButtonStyles = 'text-black/25 font-bold hover:text-orangeBurnt';
 
   return (
     <div className={moduleStyles}>
